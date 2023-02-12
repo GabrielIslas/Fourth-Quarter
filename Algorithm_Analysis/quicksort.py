@@ -9,8 +9,10 @@ def partition(array, startIndex, finalIndex):
     return i + 1
 
 def quicksort(array, startIndex, finalIndex):
+    print("Start: " + str(array[startIndex]) + " End: " + str(array[finalIndex]), end = " ")
     if startIndex < finalIndex:
         q = partition(array, startIndex, finalIndex)
+        print("Pivot: " + str(array[q]))
         quicksort(array, startIndex, q - 1)
         quicksort(array, q + 1, finalIndex)
 

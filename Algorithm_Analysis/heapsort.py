@@ -19,6 +19,7 @@ def HeapBuild(array):
     
 def HeapSort(array):
     HeapBuild(array)
+    print(array)
     heapSize = len(array)
     
     for _ in range(heapSize - 1):
