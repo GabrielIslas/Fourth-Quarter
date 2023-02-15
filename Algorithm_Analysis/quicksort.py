@@ -9,14 +9,27 @@ def partition(array, startIndex, finalIndex):
     return i + 1
 
 def quicksort(array, startIndex, finalIndex):
-    print("Start: " + str(array[startIndex]) + " End: " + str(array[finalIndex]), end = " ")
     if startIndex < finalIndex:
         q = partition(array, startIndex, finalIndex)
-        print("Pivot: " + str(array[q]))
+        print(f"First: {array[startIndex]}, Last: {array[finalIndex]}, Pivot: {array[q]}")
+        print("[", end = "")
+        for i in range(startIndex, finalIndex + 1):
+            print(f" {array[i]}", end = "")
+        print(" ]")
         quicksort(array, startIndex, q - 1)
         quicksort(array, q + 1, finalIndex)
+        
+        
 
-array1 = [2, 8, 7, 1, 3, 5, 6, 4]
-quicksort(array1, 0, 7)
+array1 = [23, 17, 21, 3, 42, 9, 13, 1, 2, 7, 35, 4]
+array2 = [3, 9, 14, 12, 2, 17, 15, 8, 6, 18, 20, 1]
+print("Operations on array 1")
 print(array1)
+quicksort(array1, 0, 11)
+print(array1)
+
+print("Operations on array 2")
+print(array2)
+quicksort(array2, 0, 11)
+print(array2)
 

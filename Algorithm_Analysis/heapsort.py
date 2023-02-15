@@ -18,16 +18,18 @@ def HeapBuild(array):
         Heapify(array, heapSize,  i)
     
 def HeapSort(array):
-    HeapBuild(array)
     print(array)
+    HeapBuild(array)
+    print(f"Heap: {array}")
+    print("HeapSort steps: ")
     heapSize = len(array)
-    
     for _ in range(heapSize - 1):
         array[0], array[heapSize - 1] = array[heapSize - 1], array[0]
         heapSize -= 1
         Heapify(array, heapSize, 0)
+        print(array)
 
 
-array1 = [2, 9, 7, 6, 5, 8]
+array1 = [23, 17, 21, 3, 42, 9, 13, 1, 2, 7, 35, 4]
 HeapSort(array1)
-print(array1)
+

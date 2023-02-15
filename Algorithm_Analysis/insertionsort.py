@@ -11,4 +11,8 @@ def insert_sort(A):
 
 arr1 = [7, 3, 9, 4, 2, 5, 6, 1, 8]
 arr2 = [3, 5, 2, 9, 8, 1, 6, 4, 7]
+print("Insertion sort")
+print("Steps for array 1: ")
 insert_sort(arr1)
+print("\nSteps for array 2: ")
+insert_sort(arr2)

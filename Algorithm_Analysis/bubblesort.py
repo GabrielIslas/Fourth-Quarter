@@ -13,5 +13,8 @@ def bubble_sort(array):
 
 arr1 = [7, 3, 9, 4, 2, 5, 6, 1, 8]
 arr2 = [3, 5, 2, 9, 8, 1, 6, 4, 7]
+print("Bubble sort")
+print("Steps for array 1: ")
+bubble_sort(arr1)
+print("\nSteps for array 2: ")
 bubble_sort(arr2)
-

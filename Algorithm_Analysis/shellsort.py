@@ -12,12 +12,12 @@ def shellsort(array, gaps):
                 array[j] = array[j-gap]
                 j -= gap
             array[j] = temp
-        print(array)
-    print("Comparisons: " + str(counter))
+            print(array)
+    print("Total Comparisons: " + str(counter))
         
 
 gaps1 = [5, 2, 1]
 arr1 = [7, 3, 9, 4, 2, 5, 6, 1, 8]
 arr2 = [3, 5, 2, 9, 8, 1, 6, 4, 7]
-shellsort(arr1, gaps1)
+shellsort(arr2, gaps1)
 
