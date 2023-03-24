@@ -94,10 +94,13 @@ def predecessor(x):
 
     
 
-r = insert(None, 5)
-r = insert(r, 3)
+r = insert(None, 18)
 r = insert(r, 7)
-r = insert(r, 2)
-r = insert(r, 4)
-r = insert(r, 9)
+r = insert(r, 34)
+r = insert(r, 21)
+r = insert(r, 19)
+r = insert(r, 32)
+r = insert(r, 5)
+
+postorder_tree_walk(r)
 

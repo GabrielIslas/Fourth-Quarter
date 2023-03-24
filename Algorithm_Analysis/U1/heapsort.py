@@ -30,6 +30,6 @@ def HeapSort(array):
         print(array)
 
 
-array1 = [23, 17, 21, 3, 42, 9, 13, 1, 2, 7, 35, 4]
+array1 = [18, 7, 34, 21, 19, 32, 5]
 HeapSort(array1)
 
