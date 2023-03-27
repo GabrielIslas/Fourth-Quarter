@@ -82,7 +82,11 @@ def create_graph(edge_list: list):
     graph = nx.Graph()
     graph.add_nodes_from(existingNodes)
     graph.add_weighted_edges_from(edge_list)
-    return graph
+    position = nx.spring_layout(graph)
+    nx.draw_networkx(graph, pos=position, arrows = False, with_labels = True)
+    labels = nx.get_edge_attributes(graph, "weight")
+    nx.draw_networkx_edge_labels(graph, position, edge_labels=labels)
+    plt.show()
         
 graphList = read_graph(filepath)
 print("Edge list from file:")
@@ -106,15 +110,4 @@ print(f"Eccentricity of node 8: {get_eccentricity(distance_matrix, 8)}")
 print(f"Radius: {get_radius(distance_matrix)}")
 print(f"Periphery set: {get_periphery(distance_matrix)}")
 print(f"Center set: {get_center(distance_matrix)}")
-graphStructure = create_graph(graphList)
-position = nx.spring_layout(graphStructure)
-nx.draw_networkx(graphStructure, pos=position, arrows = False, with_labels = True)
-labels = nx.get_edge_attributes(graphStructure, "weight")
-nx.draw_networkx_edge_labels(graphStructure, position, edge_labels=labels)
-plt.show()
-
-
-
-    
-
-      
+create_graph(graphList)
