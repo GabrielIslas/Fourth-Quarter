@@ -13,7 +13,6 @@ def coinrow(C):
             coinsUsed.extend(coinList[::-2])
             coinList.clear()
     coinsUsed.extend(coinList[::-2])
-
     return (F.pop(), coinsUsed)
 
 print(coinrow(coinlist))

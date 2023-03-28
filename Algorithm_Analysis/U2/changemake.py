@@ -5,34 +5,29 @@
 
 import math
 
-coin_types = [1,3,4]
-changegoal = 38
+coin_types = [2, 3, 5, 7, 11]
+changegoal = 51
 
 def change_make(change, coins):
     F = [0]
-    coinGroups = []
+    coinsChange = [0]
     for i in range(1, change+1):
         temp = math.inf
         j = 0
-        coinGroup = []
+        finalCoin = -1
         while j < len(coins) and i >= coins[j]:
             if(F[i - coins[j]] < temp):
-                coinGroup.append(coins[j])
+                finalCoin = coins[j]
             temp = min(F[i - coins[j]], temp)
             j += 1
-        coinGroups.append(coinGroup)
+        coinsChange.append(finalCoin)
         F.append(temp+1)
-    tempchange = change
-    index = change - 1
     coinsUsed = []
-    while tempchange != 0:
-        lastValue = coinGroups[index][len(coinGroups[index]) - 1]
-        coinsUsed.append(lastValue)
-        index -= lastValue
-        tempchange -= lastValue
-    print(F)
-    print(coinsUsed)
-    return F[change]
+    temp = change
+    while coinsChange[temp] != 0:
+         coinsUsed.append(coinsChange[temp])
+         temp -= coinsChange[temp]
+    return (F[change], coinsUsed)
 
 print(change_make(changegoal, coin_types))
 
