@@ -1,4 +1,5 @@
 import numpy as np
+import math
 
 def coin_collecting(C: np.ndarray):
     n, m = C.shape
@@ -29,5 +30,10 @@ def coin_collecting(C: np.ndarray):
     return (F[n-1][m-1], path)
 
 coinmap = np.random.randint(2, size = (5, 6))
-print(coinmap)
-print(coin_collecting(coinmap))
+coinmapwall = np.array([[0, -math.inf, 0, 1, 0, 0],
+                         [1, 0, 0, -math.inf, 1, 0], 
+                         [0, 1, 0, -math.inf, 1, 0], 
+                         [0, 0, 0, 1, 0, 1], 
+                         [-math.inf, -math.inf, -math.inf, 0, 1, 0]])
+print(coinmapwall)
+print(coin_collecting(coinmapwall))
