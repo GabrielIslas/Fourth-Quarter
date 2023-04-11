@@ -1,4 +1,3 @@
-coinlist = [5,1,2,10,6,2]
 
 def coinrow(C):
     F = [0, C[0]] # starting values
@@ -10,10 +9,12 @@ def coinrow(C):
             coinList.append(C[i])
         else:
             F.append(F[i])
-            coinsUsed.extend(coinList[::-2])
+            coinsUsed.extend(reversed(coinList[::-2]))
             coinList.clear()
-    coinsUsed.extend(coinList[::-2])
+    coinsUsed.extend(reversed(coinList[::-2]))
     return (F.pop(), coinsUsed)
+
+coinlist = [5,1,2,10,6,2,4,5,1,8,3,1,9]
 
 print(coinrow(coinlist))
 

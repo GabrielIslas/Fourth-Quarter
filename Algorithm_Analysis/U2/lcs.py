@@ -32,8 +32,8 @@ def print_lcs(b: np.ndarray, X: str, i: int, j: int):
     else:
         print_lcs(b, X, i, j-1)
 
-x = "abcbdab"
-y = "bdcaba"
+x = "abcbdabaabb"
+y = "bdcabaaababb"
 results = lcs_length(x, y)
 
 print(results[0])

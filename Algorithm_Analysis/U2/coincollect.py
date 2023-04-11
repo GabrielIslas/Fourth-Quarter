@@ -4,7 +4,6 @@ import math
 def coin_collecting(C: np.ndarray):
     n, m = C.shape
     F = np.zeros(shape = (n, m))
-    path = np.zeros(shape = (n, m))
     F[0][0] = C[0][0]
     path = []
     for i in range(1, m):
@@ -25,7 +24,7 @@ def coin_collecting(C: np.ndarray):
     for i in range(indextemp[0]):
         path.append("down")
     for i in range(indextemp[1]):
-        path.append("left")
+        path.append("right")
     path.reverse()
     return (F[n-1][m-1], path)
 
