@@ -1,1 +1,0 @@
-# research greedy algorithm
