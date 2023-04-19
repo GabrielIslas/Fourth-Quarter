@@ -18,6 +18,7 @@ triangle1 = [[2],
 
 triangle2 = [[2],[5,4],[1,4,7],[8,6,9,6]]
 
+print(min_sum_triangle(triangle1))
 print(min_sum_triangle(triangle2))
 
 

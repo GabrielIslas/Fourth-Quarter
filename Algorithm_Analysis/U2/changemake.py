@@ -5,9 +5,6 @@
 
 import math
 
-coin_types = [2, 3, 5, 7, 11]
-changegoal = 51
-
 def change_make(change, coins):
     F = [0]
     coinsChange = [0]
@@ -18,7 +15,7 @@ def change_make(change, coins):
         while j < len(coins) and i >= coins[j]:
             if(F[i - coins[j]] < temp):
                 finalCoin = coins[j]
-            temp = min(F[i - coins[j]], temp)
+                temp = F[i - coins[j]]
             j += 1
         coinsChange.append(finalCoin)
         F.append(temp+1)
@@ -29,5 +26,8 @@ def change_make(change, coins):
          temp -= coinsChange[temp]
     return (F[change], coinsUsed)
 
+
+coin_types = [1, 3, 5, 8, 14, 25]
+changegoal = 74
 print(change_make(changegoal, coin_types))
 
