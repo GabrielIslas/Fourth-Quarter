@@ -32,6 +32,7 @@ def matrix_mult_r(A: np.ndarray, B: np.ndarray):
         C[n//2:, n//2:] = matrix_mult_r(A21, B12) + matrix_mult_r(A22, B22)
     return C 
 
+# 7T(n/2) + Theta(n^2)
 def strassen(A: np.ndarray, B: np.ndarray):
     n = A.shape[0]
     C = np.zeros((n,n))
